@@ -1,0 +1,293 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>XLSmart HR Dashboard</title>
+    <link rel="stylesheet" href="styles.css">
+    <!-- Icons will be replaced with Unicode symbols -->
+</head>
+<body>
+    <div class="dashboard-container">
+        <!-- Header -->
+        <header class="header">
+            <div class="header-content">
+                <div class="logo">
+                    <span class="logo-icon">👥</span>
+                    <h1>XLSmart HR Dashboard</h1>
+                </div>
+                <div class="user-info">
+                    <span class="user-icon">👤</span>
+                    <span>HR Admin</span>
+                </div>
+            </div>
+        </header>
+
+        <!-- Navigation -->
+        <nav class="sidebar">
+            <ul class="nav-menu">
+                <li class="nav-item active">
+                    <a href="#" class="nav-link" data-section="overview">
+                        <span class="nav-icon">📊</span>
+                        <span>Overview</span>
+                    </a>
+                </li>
+                <li class="nav-item">
+                    <a href="#" class="nav-link" data-section="employees">
+                        <span class="nav-icon">👥</span>
+                        <span>Employees</span>
+                    </a>
+                </li>
+                <li class="nav-item">
+                    <a href="#" class="nav-link" data-section="attendance">
+                        <span class="nav-icon">📅</span>
+                        <span>Attendance</span>
+                    </a>
+                </li>
+                <li class="nav-item">
+                    <a href="#" class="nav-link" data-section="payroll">
+                        <span class="nav-icon">💰</span>
+                        <span>Payroll</span>
+                    </a>
+                </li>
+                <li class="nav-item">
+                    <a href="#" class="nav-link" data-section="performance">
+                        <span class="nav-icon">⭐</span>
+                        <span>Performance</span>
+                    </a>
+                </li>
+            </ul>
+        </nav>
+
+        <!-- Main Content -->
+        <main class="main-content">
+            <!-- Overview Section -->
+            <section id="overview" class="content-section active">
+                <h2 class="section-title">HR Overview</h2>
+                
+                <!-- Key Metrics -->
+                <div class="metrics-grid">
+                    <div class="metric-card">
+                        <div class="metric-icon">
+                            <span>👥</span>
+                        </div>
+                        <div class="metric-info">
+                            <h3>Total Employees</h3>
+                            <span class="metric-value">247</span>
+                            <span class="metric-change positive">+12 this month</span>
+                        </div>
+                    </div>
+                    
+                    <div class="metric-card">
+                        <div class="metric-icon">
+                            <span>👤</span>
+                        </div>
+                        <div class="metric-info">
+                            <h3>New Hires</h3>
+                            <span class="metric-value">8</span>
+                            <span class="metric-change positive">+3 from last month</span>
+                        </div>
+                    </div>
+                    
+                    <div class="metric-card">
+                        <div class="metric-icon">
+                            <span>📈</span>
+                        </div>
+                        <div class="metric-info">
+                            <h3>Attendance Rate</h3>
+                            <span class="metric-value">94.2%</span>
+                            <span class="metric-change positive">+2.1% improvement</span>
+                        </div>
+                    </div>
+                    
+                    <div class="metric-card">
+                        <div class="metric-icon">
+                            <span>🕐</span>
+                        </div>
+                        <div class="metric-info">
+                            <h3>Avg. Working Hours</h3>
+                            <span class="metric-value">8.3</span>
+                            <span class="metric-change neutral">No change</span>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Charts Section -->
+                <div class="charts-grid">
+                    <div class="chart-card">
+                        <h3>Employee Distribution by Department</h3>
+                        <canvas id="departmentChart"></canvas>
+                    </div>
+                    
+                    <div class="chart-card">
+                        <h3>Monthly Attendance Trend</h3>
+                        <canvas id="attendanceChart"></canvas>
+                    </div>
+                </div>
+
+                <!-- Recent Activities -->
+                <div class="activity-card">
+                    <h3>Recent HR Activities</h3>
+                    <div class="activity-list">
+                        <div class="activity-item">
+                            <span class="activity-icon">👤</span>
+                            <div class="activity-content">
+                                <span class="activity-text">New employee onboarded: John Smith - Software Engineer</span>
+                                <span class="activity-time">2 hours ago</span>
+                            </div>
+                        </div>
+                        
+                        <div class="activity-item">
+                            <span class="activity-icon">📅</span>
+                            <div class="activity-content">
+                                <span class="activity-text">Weekly attendance report generated</span>
+                                <span class="activity-time">5 hours ago</span>
+                            </div>
+                        </div>
+                        
+                        <div class="activity-item">
+                            <span class="activity-icon">⭐</span>
+                            <div class="activity-content">
+                                <span class="activity-text">Performance review completed for 15 employees</span>
+                                <span class="activity-time">1 day ago</span>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </section>
+
+            <!-- Employees Section -->
+            <section id="employees" class="content-section">
+                <h2 class="section-title">Employee Management</h2>
+                
+                <div class="table-container">
+                    <div class="table-header">
+                        <button class="btn btn-primary">
+                            <span>➕</span>
+                            Add Employee
+                        </button>
+                        <div class="search-box">
+                            <span class="search-icon">🔍</span>
+                            <input type="text" placeholder="Search employees...">
+                        </div>
+                    </div>
+                    
+                    <table class="employee-table">
+                        <thead>
+                            <tr>
+                                <th>ID</th>
+                                <th>Name</th>
+                                <th>Department</th>
+                                <th>Position</th>
+                                <th>Status</th>
+                                <th>Actions</th>
+                            </tr>
+                        </thead>
+                        <tbody>
+                            <tr>
+                                <td>001</td>
+                                <td>John Smith</td>
+                                <td>Engineering</td>
+                                <td>Software Engineer</td>
+                                <td><span class="status active">Active</span></td>
+                                <td>
+                                    <button class="btn-icon">✏️</button>
+                                    <button class="btn-icon">👁️</button>
+                                </td>
+                            </tr>
+                            <tr>
+                                <td>002</td>
+                                <td>Sarah Johnson</td>
+                                <td>Marketing</td>
+                                <td>Marketing Manager</td>
+                                <td><span class="status active">Active</span></td>
+                                <td>
+                                    <button class="btn-icon">✏️</button>
+                                    <button class="btn-icon">👁️</button>
+                                </td>
+                            </tr>
+                            <tr>
+                                <td>003</td>
+                                <td>Mike Davis</td>
+                                <td>Sales</td>
+                                <td>Sales Representative</td>
+                                <td><span class="status inactive">On Leave</span></td>
+                                <td>
+                                    <button class="btn-icon">✏️</button>
+                                    <button class="btn-icon">👁️</button>
+                                </td>
+                            </tr>
+                        </tbody>
+                    </table>
+                </div>
+            </section>
+
+            <!-- Attendance Section -->
+            <section id="attendance" class="content-section">
+                <h2 class="section-title">Attendance Management</h2>
+                <div class="attendance-summary">
+                    <div class="attendance-card">
+                        <h3>Today's Attendance</h3>
+                        <div class="attendance-stats">
+                            <div class="stat">
+                                <span class="stat-label">Present</span>
+                                <span class="stat-value">232</span>
+                            </div>
+                            <div class="stat">
+                                <span class="stat-label">Absent</span>
+                                <span class="stat-value">15</span>
+                            </div>
+                            <div class="stat">
+                                <span class="stat-label">Late</span>
+                                <span class="stat-value">8</span>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </section>
+
+            <!-- Payroll Section -->
+            <section id="payroll" class="content-section">
+                <h2 class="section-title">Payroll Management</h2>
+                <div class="payroll-summary">
+                    <div class="payroll-card">
+                        <h3>Monthly Payroll Summary</h3>
+                        <div class="payroll-stats">
+                            <div class="stat">
+                                <span class="stat-label">Total Payroll</span>
+                                <span class="stat-value">$1,247,500</span>
+                            </div>
+                            <div class="stat">
+                                <span class="stat-label">Pending Payments</span>
+                                <span class="stat-value">$45,200</span>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </section>
+
+            <!-- Performance Section -->
+            <section id="performance" class="content-section">
+                <h2 class="section-title">Performance Management</h2>
+                <div class="performance-summary">
+                    <div class="performance-card">
+                        <h3>Performance Overview</h3>
+                        <div class="performance-stats">
+                            <div class="stat">
+                                <span class="stat-label">Reviews Completed</span>
+                                <span class="stat-value">189</span>
+                            </div>
+                            <div class="stat">
+                                <span class="stat-label">Average Rating</span>
+                                <span class="stat-value">4.2/5</span>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </section>
+        </main>
+    </div>
+
+    <script src="script.js"></script>
+</body>
+</html>
